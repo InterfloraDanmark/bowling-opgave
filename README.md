@@ -2,9 +2,9 @@
 
 ## Bowling-point algoritme
 
-Implementer en algoritme som fortløbende kan beregne summen for et spil, der følger [10-kegle reglerne](https://en.wikipedia.org/wiki/Ten-pin_bowling#Traditional_scoring) til pointberegning i bowling. 
+Implement an algoritme which continuesly calculates the sum of a game, which follows the [10-pin rule](https://en.wikipedia.org/wiki/Ten-pin_bowling#Traditional_scoring) for point calculation in bowling.
 
-For at løse opgaven skal du bruge to REST API endpoints som midlertidigt tilbydes af SKAT:
+In order to resolve the task you have to use the two REST API endpoints which are temporarily provided:
 
 <table>
   <tbody>
@@ -20,9 +20,9 @@ For at løse opgaven skal du bruge to REST API endpoints som midlertidigt tilbyd
       <td valign="top"></td>
       <td>
         <ul>
-          <li>Returnerer en JSON-liste med en tilfældig længde og kombination af valide bowling points, samt et token, som skal bruges i POST endpoint.</li>
-          <li>Strike er repræsenteret ved [10,0]</li>
-          <li>Spare er repræsenteret ved t. ex. [7,3] eller [0,10] eller [5,5]</li>
+          <li>Returns a JSON-list with a random length and combination of valid bowling points, as well as a token, which must be used for the POST endpoint.</li>
+          <li>Strike is represented by [10,0]</li>
+          <li>Spare is represented by f.ex. [7,3] or [0,10] or [5,5]</li>
       </ul>
       </td>
     </tr>
@@ -42,21 +42,20 @@ For at løse opgaven skal du bruge to REST API endpoints som midlertidigt tilbyd
         <br />
         {"token": "124jgjfj3FkenI", "points": [5, 10, 25, 30]}
       </td>
-      <td valign="top"><i>token</i>: Modtaget i GET<br /><i>points</i>: Dine kalkulerede summer<br /><br />Returnerer HTTP status kode ”200 OK” hvis <i>token</i> er korrekt og JSON { "success": true } hvis <i>summerne</i> er korrekt.<br /><br />Summerne er en liste af de akkumulerende point resultater.<br /><br />T. ex. giver <i>point</i> [[3,7],[10,0],[8,2],[8,1],[10,0],[3,4],[7,0],[5,5],[3,2],[2,5]] <i>summerne</i> [20,40,58,67,84,91,98,111,116,123], hvor 123 er totalsummen efter, i det her tilfælde, 10 omganger. <br /><br /> Tip: Hvis pointene ender på <i>spare / strike</i> før et normal spils længde, så vil der ikke udløses bonus. For eksempel vil [[2, 0], [8, 2]] give <i>summerne</i> [2, 12]</td>
+      <td valign="top"><i>token</i>: Received in GET<br /><i>points</i>: Your calculated sums<br /><br />Returned HTTP status code ”200 OK” if <i>token</i> is correct og JSON { "success": true } if the <i>sums</i> are correct.<br /><br />The sums are a list of the accumulated results.<br /><br />F.ex. the <i>points</i> [[3,7],[10,0],[8,2],[8,1],[10,0],[3,4],[7,0],[5,5],[3,2],[2,5]] yield the <i>sums</i> [20,40,58,67,84,91,98,111,116,123], where 123 is the total sum after, in this case, 10 rounds. <br /><br /> Tip: If the points end on a <i>spare / strike</i> before a normal games length (10 rounds) it won't trigger a bonus. F.ex the points [[2, 0], [8, 2]] will give the  <i>sums</i> [2, 12]</td>
     </tr>
   </tbody>
 </table>
 
 ## Forudsætninger
-* Programmeringssprog: Valgfrit 
+* Programming language: Javascript (VueJS 3) 
 * Løsningsdesign/arkitektur: Valgfrit 
 * UI: Valgfrit om nødvendig
-* Kildekode kan leveres som et af følgende sammen med din ansøgning: 
+* Source code can the belivered in the following way: 
   * .zip fil 
-  * URL til dit public kildekode repository 
-  * Evt. URL til en DockerHub instans, hvor vi kan hente en Docker container med nødvendige afhængigheder for at køre koden. 
-* Kildekode skal have testkode som verificerer at din point-algoritme fungerer.
-* 10-kegle bowling med traditionelle 10-kegle regler. 
+  * URL to the git repo 
+* The source code should contain code which varifies that your point-algorithm Kildekode functions.
+* 10-pin bowling with traditional 10-pin rules. 
   * https://en.wikipedia.org/wiki/Ten-pin_bowling#Traditional_scoring  
-  * https://da.wikipedia.org/wiki/Bowling 
+  * https://en.wikipedia.org/wiki/Bowling
   * Simulator: http://www.bowlinggenius.com/ 
